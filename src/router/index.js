@@ -7,16 +7,16 @@ const routes = [
   { path: '/', name: 'Home', component: () => import('../views/trade/Trade.vue'),
     meta: {
       title: 'K-Trader',
-      // metaTags: [
-      //   {
-      //     name: 'description',
-      //     content: 'The home page of our example app.'
-      //   },
-      //   {
-      //     property: 'og:description',
-      //     content: 'The home page of our example app.'
-      //   }
-      // ]
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+        },
+        {
+          property: 'og:description',
+          content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+        }
+      ]
     }  
   },
   {
@@ -27,15 +27,114 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  { path: '/register', name: 'Register', component: () => import('../views/auth/Register.vue'), meta: { title: 'K-Trade' } },
-  { path: '/account', name: 'Account', component: () => import('../views/auth/Account.vue'), meta: { title: 'K-Trade' } },
-  { path: '/trade', name: 'Trade', component: () => import('../views/trade/Trade.vue'), meta: { title: 'K-Trade' }},
-  { path: '/post', name: 'TradePost', component: () => import('../views/trade/TradePost.vue'), meta: { title: 'K-Trade' } },
-  { path: '/trade/:id', name: 'TradeView', component: () => import('../views/trade/TradeView.vue'), meta: { title: 'K-Trade' } },
-  { path: '/mytrade', name: 'MyTrade', component: () => import('../views/trade/MyTrade.vue'), meta: { title: 'K-Trade' } }, // Trade Item List I Posted
-  { path: '/transaction/:id', name: 'TransactionView', component: () => import('../views/transaction/TransactionView.vue'), meta: { title: 'K-Trade' } }, // Transaction List 
-  { path: '/transactionlist', name: 'TransactionList', component: () => import('../views/transaction/TransactionList.vue'), meta: { title: 'K-Trade' } }, // Transaction: message happen here
-  { path: '/feedback', name: 'Feedback', component: () => import('../views/Feedback.vue'), meta: { title: 'K-Trade' } } // Transaction: message happen here
+  { path: '/register', name: 'Register', component: () => import('../views/auth/Register.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } },
+  { path: '/account', name: 'Account', component: () => import('../views/auth/Account.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } },
+  { path: '/trade', name: 'Trade', component: () => import('../views/trade/Trade.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  }},
+  { path: '/post', name: 'TradePost', component: () => import('../views/trade/TradePost.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } },
+  { path: '/trade/:id', name: 'TradeView', component: () => import('../views/trade/TradeView.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } },
+  { path: '/mytrade', name: 'MyTrade', component: () => import('../views/trade/MyTrade.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } }, // Trade Item List I Posted
+  { path: '/transaction/:id', name: 'TransactionView', component: () => import('../views/transaction/TransactionView.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } }, // Transaction List 
+  { path: '/transactionlist', name: 'TransactionList', component: () => import('../views/transaction/TransactionList.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } }, // Transaction: message happen here,
+  { path: '/feedback', name: 'Feedback', component: () => import('../views/Feedback.vue'), meta: { title: 'K-Trade',
+    metaTags: [
+      {
+        name: 'description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      },
+      {
+        property: 'og:description',
+        content: 'Free k-pop goods trade service between users. Secure service between phone verified users. If you have an unnecessary photocard or poster, post it here!'
+      }
+    ]
+  } } // Transaction: message happen here
 ]
 
 const router = new VueRouter({

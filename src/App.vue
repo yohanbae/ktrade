@@ -4,8 +4,8 @@
     <div class="header">
       <!-- <div class="header-deco"></div> -->
       <div class="header-title">
-        <h2>K-POP FREE EXCHANGE SERVICE</h2>
-        <h5>The K-Pop goods exchange service between KPOP Fans</h5>
+        <h2>K-POP FREE TRADE SERVICE</h2>
+        <h5>The K-Pop goods trade service between KPOP Fans</h5>
         <h5>100% Free service between the phone verified secure users</h5>
         <h5>Feel free to upload your unnecessary goods here</h5>
       </div>
@@ -100,7 +100,7 @@
           <v-spacer></v-spacer>
           <div class="pa-4 small">
           Welcome!<br />
-          We provide an free service for all K-POP fans to exchange goods for free.
+          We provide a free service for all K-POP fans to trade goods for free.
           I developed this website for myself since I didn't want to spend extra money to collect photocards.<br /><br />
 
           We provide this service to the only phone verified users<br />
@@ -119,8 +119,9 @@
             <img src="./assets/tutorialpost01.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
-              Search for a item you are interested<br />
-              If you find one, then click it to see more detail<br />
+              <h4>STEP 1</h4>
+              Click a "POST" button at the bottom.
+              Make sure to attach an image and full description of what you want and have.
               </div>
             </div>
           </div>
@@ -130,9 +131,10 @@
             <img src="./assets/tutorialpost02.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
-              Read full description of the item,<br />
-              Check if you have the uploader’s wanted item and your location is close to the uploader.<br />
-              If all conditions are met, then click the “Request Trade” button.
+                <h4>STEP 2</h4>
+                If anyone interested in your item, they will send you a "REQUEST MESSAGE".
+                An email will be sent to you once you receive the request.
+                You can also check the status at the "MESSAGE" tab.
               </div>
             </div>
           </div>
@@ -142,8 +144,9 @@
             <img src="./assets/tutorial04.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
+              <h4>STEP 3</h4>
               Now you are in the chatroom with the uploader!<br />
-              You can discuss more about items and trade.<br />
+              You can discuss more items and trade.<br />
               Once you make a decision, then click the “TRADE” button.
               </div>
             </div>
@@ -154,7 +157,8 @@
             <img src="./assets/tutorial05.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
-                Under condition if both of you click the “TRADE” button,<br />
+                <h4>STEP 4</h4>
+                Under the condition, if both of you click the “TRADE” button,<br />
                 You will be able to see each other’s personal information: Phone number & email address.<br />
                 From now on, you are free from us and can trade with the person.<br />
                 Don’t forget to rate each other after trade so other 
@@ -172,7 +176,8 @@
             <img src="./assets/tutorial01.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
-              Search for a item you are interested<br />
+              <h4>STEP 1</h4>
+              Search for an item you are interested<br />
               If you find one, then click it to see more detail<br />
               </div>
             </div>
@@ -183,6 +188,7 @@
             <img src="./assets/tutorial02.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
+              <h4>STEP 2</h4>
               Read full description of the item,<br />
               Check if you have the uploader’s wanted item and your location is close to the uploader.<br />
               If all conditions are met, then click the “Request Trade” button.
@@ -195,9 +201,10 @@
             <img src="./assets/tutorial03.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
+                <h4>STEP 3</h4>
                 Now the system will ask you to attach a photo file of your item.<br />
                 Once you add photo and description,<br />
-                Click send request.
+                Click "SEND REQUEST".
               </div>
             </div>
           </div>
@@ -207,8 +214,9 @@
             <img src="./assets/tutorial04.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
+              <h4>STEP 4</h4>
               Now you are in the chatroom with the uploader!<br />
-              You can discuss more about items and trade.<br />
+              You can discuss more items and trade.<br />
               Once you make a decision, then click the “TRADE” button.
               </div>
             </div>
@@ -219,7 +227,8 @@
             <img src="./assets/tutorial05.png" alt="hoi" />
             <div class="tutorial-desc">
               <div>
-                Under condition if both of you click the “TRADE” button,<br />
+                <h4>STEP 5</h4>
+                Under the condition if both of you click the “TRADE” button,<br />
                 You will be able to see each other’s personal information: Phone number & email address.<br />
                 From now on, you are free from us and can trade with the person.<br />
                 Don’t forget to rate each other after trade so other 
@@ -233,13 +242,13 @@
             <div class="tutorial-desc">
               <div>
               Notice<br />
-              Anyone can request trade or upload item with an account.<br />
-              We encourage you to trade in person to avoid fraud. Find person live close to your area.<br />
-              If you are willing to trade through mail, find someone with good rating.<br />
+              Anyone can request a trade or upload an item with an account.<br />
+              We encourage you to trade in person to avoid fraud. Find a person who live close to your area.<br />
+              If you are willing to trade through mail, find someone with a good rating.<br />
               Don’t forget to give a rate after successful trade so other users can see the reputation.<br />
-              This place is money free zone. No buying/selling.<br />
+              This place is money free zone. No buying/selling. Only free trade accepted.<br />
               One item has a value of one. Cannot be traded with multiple items.<br />
-              Ktrade is not responsible any scam/fraud act between users.
+              K-trade is not responsible for any scam/fraud act between users.
               </div>
             </div>
           </div>
@@ -294,7 +303,7 @@
     font-size: 20px;
     color:#e6e3e3;    
     top:30px;
-    left:calc((100% - 420px) / 2);
+    left:calc((100% - 360px) / 2);
     h6,h5 {
       font-weight:100;
       font-size:14px;
@@ -304,8 +313,8 @@
 
   .header-bar {
     height:50px;
-    width:420px;    
-    left:calc((100% - 420px) / 2);
+    width:360px;    
+    left:calc((100% - 360px) / 2);
     position:absolute;
     bottom:0;
     display:grid;
@@ -353,8 +362,8 @@
 .main {
   padding:20px 0;  
   min-height:50vh;
-  width:420px;    
-  margin-left:calc((100% - 420px) / 2);
+  width:360px;    
+  margin-left:calc((100% - 360px) / 2);
   @media only screen and (min-width: 768px) {
     width:768px;    
     margin-left:calc((100% - 768px) / 2);

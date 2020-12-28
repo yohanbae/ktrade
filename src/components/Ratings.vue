@@ -6,9 +6,14 @@
             <v-card min-height="400">
                 <v-card-title class="dialog-top lighten-2">FEEDBACK</v-card-title>
                 <v-card-text class="mt-3">
-                    <div v-for="(item, i) in ratingFeedback" v-bind:key="i">                                            
-                        <v-icon small class="mr-3">{{ item.rating ? "mdi-thumb-up-outline" : "mdi-thumb-down-outline" }}</v-icon>                         
-                        "{{item.feedback}}" from {{item.from}}
+                    <div v-if="ratingFeedback.length > 0">
+                        <div v-for="(item, i) in ratingFeedback" v-bind:key="i">                                            
+                            <v-icon small class="mr-3">{{ item.rating ? "mdi-thumb-up-outline" : "mdi-thumb-down-outline" }}</v-icon>                         
+                            "{{item.feedback}}" from {{item.from}}
+                        </div>
+                    </div>
+                    <div v-else>
+                        NO FEEDBACK
                     </div>
                 </v-card-text>
                 <v-divider></v-divider>

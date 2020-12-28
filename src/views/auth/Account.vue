@@ -34,7 +34,7 @@
 							<v-container class="my-5">
 								<v-text-field outlined label="Nickname" v-model="nickname"></v-text-field>
 								<v-text-field outlined label="Email" v-model="email"></v-text-field>
-								<v-text-field outlined label="Your city" v-model="location"></v-text-field>
+								<!-- <v-text-field outlined label="Your city" v-model="location"></v-text-field> -->
 							</v-container>
 							<v-divider></v-divider>
 							<v-card-actions>
