@@ -378,8 +378,8 @@
   padding:30px 0;
   background:#262222;
   color:white;
-  padding-left:calc((100% - 1366px) / 2);  
-  padding-right:calc((100% - 1366px) / 2);  
+  padding-left:calc((100% - 360px) / 2);  
+  padding-right:calc((100% - 360px) / 2);  
   .footer-one{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
