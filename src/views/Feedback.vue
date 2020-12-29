@@ -49,13 +49,19 @@ export default {
     onFeedback: async function() { // Upload to Firebase DB
       if(this.title !== "" && this.name !== "" && this.email !== "" && this.description !== "") {
         // SEND EMAIL
-        // const requestOptions = {
-        // 	method: "POST",
-        // 	headers: { "Content-Type": "application/json" },
-        // 	body: { title: "Vue POST Request Example" }
-        // };
-        // fetch("localhost:5000/email/feedback", requestOptions)
-        // 	.then(response => response.json())
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: {
+            title: this.title,
+            email: this.email,
+            nickname: this.name,
+            feedback: this.description,
+            verifycode: process.env.VUE_APP_VERIFYCODE
+          }
+        };
+        fetch("https://tradeemail.herokuapp.com/email/feedback", requestOptions)
+          .then(response => response.json())
       }
     }
   },

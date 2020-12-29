@@ -31,6 +31,9 @@
 						</div>
 					</div>
 					<v-divider></v-divider>
+					<div class="trusted" v-if="item.staff">
+						<b>TRUSTED KT Staff</b>
+					</div>
 					<div class="fromstyle text-center">From {{item.location}}</div>
 
 					<v-overlay v-if="item.status === 'closed'" :absolute="true" opacity="0.6" value="true">
@@ -146,6 +149,12 @@
 	}
 }
 
+.trusted {
+	font-size:10px;
+	text-align:center;
+	color:#c44127;
+	margin-top:5px;
+}
 
 </style>
 

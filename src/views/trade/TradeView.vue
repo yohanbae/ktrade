@@ -12,6 +12,9 @@
 				<div>Posted by <strong>{{pageData.uploader}}</strong></div>
 				<Ratings :userUid="pageData.uploaderUid" />
 			</div>
+			<div class="trusted" v-if="pageData.staff">
+				<b>TRUSTED KT Staff</b>
+			</div>
       <div class="mt-3">From <strong>{{pageData.location}}</strong></div>
       <v-divider class="my-6"></v-divider>
 		<div class="text-small">If you have the <b>WANTED ITEM</b>, click <b>TRADE REQUEST</b> button</div>
@@ -25,8 +28,10 @@
           <v-btn small color='#262222' class="white--text" v-else @click="requestTrade">Request Trade</v-btn>
         </div>
       </div>
-    
-			<div class="mt-6" v-if="myUser.userMore && myUser.userMore.uid === pageData.uploaderUid">UPLOADER OPTION</div>
+
+			<div v-if="myUser">
+				<div class="mt-6" v-if="myUser.userMore.uid === pageData.uploaderUid">UPLOADER OPTION</div>
+			</div>
 			<v-divider class="my-2"></v-divider>
 			<div v-if="myUser" class="uploader-btn-wrap">			
 				<v-btn small color="#262222" class="white--text" @click="updateItem" v-if="myUser.userMore && myUser.userMore.uid === pageData.uploaderUid">UPDATE</v-btn>
@@ -161,7 +166,15 @@
   color:white;
 }
 .text-small {font-size:11px;}
-
+.trusted {
+	font-size:12px;
+	text-align:left;
+	color:white;
+	background:#c44127;
+	margin-top:5px;
+	display:inline-block;
+	padding:4px 15px;
+}
 </style>
 
 <script>
@@ -266,6 +279,10 @@ export default {
         const uploaderLocation = this.pageData.location
         const tradeeLocation = this.myUser.userMore.location        
 
+				const uploaderEmail = await firebase.firestore().collection('users').where("uid", "==", uploaderUid).get()
+				let theEmail = []
+				uploaderEmail.forEach(v => theEmail.push(v)) // theEmail[0].data().email == is the email
+
 
         let upload = currentUpload.put(this.file, metadata)
 				let path = this
@@ -303,13 +320,19 @@ export default {
 									})
 
 									// SEND EMAIL
-									// const requestOptions = {
-									// 	method: "POST",
-									// 	headers: { "Content-Type": "application/json" },
-									// 	body: { title: "Vue POST Request Example" }
-									// };
-									// fetch("localhost:5000/email", requestOptions)
-									// 	.then(response => response.json())
+									const requestOptions = {
+										method: "POST",
+										headers: { "Content-Type": "application/json" },
+										body: {
+											email: theEmail[0].data().email,
+											nickname: tradee,
+											transactionId: id,
+											tradeItem: have,
+											verifycode: process.env.VUE_APP_VERIFYCODE
+										}
+									};
+									fetch("https://tradeemail.herokuapp.com/email", requestOptions)
+										.then(response => response.json())
 
 									path.dialog = false
 									// console.log("transaction created")

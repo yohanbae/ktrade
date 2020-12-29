@@ -76,6 +76,7 @@ export default {
         let location = this.$store.state.user.userMore.location
         let uploader = this.$store.state.user.userMore.nickname
         let uploaderUid = this.$store.state.user.userMore.uid
+        let staff = this.$store.state.user.userMore.staff ? true : false
 
         let fileExt = this.file.name.slice(this.file.name.length - 3, this.file.name.length)
         if(fileExt !== "jpg" && fileExt !== "png") {
@@ -121,6 +122,7 @@ export default {
                     trader: "",
                     description,
                     status: "open",
+                    staff,
                     date: firebase.firestore.Timestamp.now()
                   })
                 }catch {
