@@ -51,18 +51,20 @@ export default {
         // SEND EMAIL
         const requestOptions = {
           method: "POST",
+          mode: 'no-cors',
           headers: { "Content-Type": "application/json" },
-          body: {
+          body: JSON.stringify({
             title: this.title,
             email: this.email,
             nickname: this.name,
             feedback: this.description,
             verifycode: process.env.VUE_APP_VERIFYCODE
-          }
+          })
         };
-        fetch("https://tradeemail.herokuapp.com/email/feedback", requestOptions)
+        await fetch("https://tradeemail.herokuapp.com/email/feedback", requestOptions)
           .then(response => response.json())
-      }
+
+      }      
     }
   },
 }
