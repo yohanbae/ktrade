@@ -30,7 +30,7 @@
       </div>
 
 			<div v-if="myUser">
-				<div class="mt-6" v-if="myUser.userMore.uid === pageData.uploaderUid">UPLOADER OPTION</div>
+				<div class="mt-6" v-if="myUser.userMore && myUser.userMore.uid === pageData.uploaderUid">UPLOADER OPTION</div>
 			</div>
 			<v-divider class="my-2"></v-divider>
 			<div v-if="myUser" class="uploader-btn-wrap">			
@@ -393,6 +393,7 @@ export default {
 		},
 		checkForRequested: async function() {
 			if(!this.pageData) return false
+
 			try {
 				let ifExist = await firebase.firestore().collection("transactions")
 					.where("tradeId", "==", this.pageData.id)
