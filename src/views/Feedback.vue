@@ -30,7 +30,7 @@
 </style>
 
 <script>
-
+import axios from "axios"
 export default {
   name: 'Feedback',
   components: {
@@ -49,22 +49,24 @@ export default {
     onFeedback: async function() { // Upload to Firebase DB
       if(this.title !== "" && this.name !== "" && this.email !== "" && this.description !== "") {
         // SEND EMAIL
-        const requestOptions = {
-          method: "POST",
-          mode: 'no-cors',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            title: this.title,
-            email: this.email,
-            nickname: this.name,
-            feedback: this.description,
-            verifycode: process.env.VUE_APP_VERIFYCODE
-          })
-        };
-        await fetch("https://tradeemail.herokuapp.com/email/feedback", requestOptions)
-          .then(response => response.json())
-
-      }      
+				try {
+          let meme = await axios.post('https://tradeemail.herokuapp.com/email/feedback',
+            {
+              title: this.title,
+              email: this.email,
+              nickname: this.name,
+              feedback: this.description,
+              verifycode: process.env.VUE_APP_VERIFYCODE            
+            },{
+              headers: {}
+            })
+          if(meme.status === 200) {
+            console.log("Working")
+          }
+				} catch(error) {
+						console.log(error)
+        }
+      }
     }
   },
 }

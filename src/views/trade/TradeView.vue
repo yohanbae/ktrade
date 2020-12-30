@@ -183,6 +183,7 @@ import 'firebase/storage'
 import GenerateID from '../../library/GenerateID'
 import Ratings from '@/components/Ratings.vue'
 import VueEasyLightbox from 'vue-easy-lightbox'
+import axios from "axios"
 
 export default {
   name: 'TradeView',
@@ -282,7 +283,7 @@ export default {
 				const uploaderEmail = await firebase.firestore().collection('users').where("uid", "==", uploaderUid).get()
 				let theEmail = []
 				uploaderEmail.forEach(v => theEmail.push(v)) // theEmail[0].data().email == is the email
-
+				// const email = theEmail[0].data().email
 
         let upload = currentUpload.put(this.file, metadata)
 				let path = this
@@ -320,19 +321,23 @@ export default {
 									})
 
 									// SEND EMAIL
-									const requestOptions = {
-										method: "POST",
-										headers: { "Content-Type": "application/json" },
-										body: {
-											email: theEmail[0].data().email,
-											nickname: tradee,
-											transactionId: id,
-											tradeItem: have,
-											verifycode: process.env.VUE_APP_VERIFYCODE
+									try {
+										let meme = await axios.post('https://tradeemail.herokuapp.com/email',
+											{
+												email: theEmail[0].data().email,
+												nickname: tradee,
+												transactionId: id,
+												tradeItem: have,
+												verifycode: process.env.VUE_APP_VERIFYCODE       
+											},{
+												headers: {}
+											})
+										if(meme.status === 200) {
+											console.log("Working")
 										}
-									};
-									fetch("https://tradeemail.herokuapp.com/email", requestOptions)
-										.then(response => response.json())
+									} catch(error) {
+											console.log(error)
+									}
 
 									path.dialog = false
 									// console.log("transaction created")
