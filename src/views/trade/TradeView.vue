@@ -175,6 +175,7 @@
 	display:inline-block;
 	padding:4px 15px;
 }
+
 </style>
 
 <script>

@@ -34,7 +34,7 @@
 					<div class="trusted" v-if="item.staff">
 						<b>TRUSTED KT Staff</b>
 					</div>
-					<div class="fromstyle text-center">From {{item.location}}</div>
+					<div class="fromstyle text-center">from {{item.location}}</div>
 
 					<v-overlay v-if="item.status === 'closed'" :absolute="true" opacity="0.6" value="true">
 						<v-btn color="#262222">CLOSED</v-btn>
@@ -122,7 +122,7 @@
 		padding:5px 20px;
 	}
 	.fromstyle {
-		font-size:12px;
+		font-size:10px;
 		padding:5px 0;
 	}
 	@media only screen and (min-width: 768px) {

@@ -77,10 +77,10 @@
       <router-view/>
     </div>
 
-    <div class="notice pa-4" v-if="notice">
+    <!-- <div class="notice pa-4" v-if="notice">
       Hello. This is a testing page. You can do whatever you want here but all items will be deleted after Testing.
       <span @click="notice = false">CLOSE</span>
-    </div>
+    </div> -->
 
     <div class="footer">
       <div class="footer-one">
